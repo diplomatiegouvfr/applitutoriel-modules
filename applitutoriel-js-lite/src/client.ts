@@ -78,17 +78,17 @@
  * @license CECILL-2.1
  */
 
-import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
 import { Client } from "hornet-js-core/src/client";
+import { Logger } from "hornet-js-logger/src/logger";
 import { Routes } from "src/routes/routes";
 import { HornetApp } from "applitutoriel-js-common/src/views/layouts/hornet-app";
 import { ErrorPage } from "hornet-js-react-components/src/widget/component/error-page";
 import { ReactClientInitializer } from "hornet-js-react-components/src/react/react-client";
 import "src/injector-context-services-page";
 
+
 (function startClient() {
-    const logger: Logger = Utils.getLogger("applitutoriel.client");
+    const logger: Logger = Logger.getLogger("applitutoriel.client");
 
     function routeLoader(name: string, callback: any) {
         logger.trace("routeLoaderClient(" + name + ")");

@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as React from "react";
 import { HornetPage, HornetPageProps } from "hornet-js-react-components/src/widget/component/hornet-page";
 import { HornetComponentProps } from "hornet-js-components/src/component/ihornet-component";
@@ -101,8 +101,9 @@ import { ProduitsTab } from "src/views/par/par-fpa/produits-tab";
 import { IdentiteTab, IdentiteTabDatasourcesService } from "src/views/par/par-fpa/identite-tab";
 import { FichePartenaireTitrePage } from "src/views/par/par-fpa/fiche-partenaire-titre-page";
 import { PartenaireMetier } from "src/models/par/par-mod";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel.views.par.par-fpa.fiche-partenaire-page");
+const logger: Logger = Logger.getLogger("applitutoriel.views.par.par-fpa.fiche-partenaire-page");
 
 export const PAR_MODE_CONSULTER: string = "consulter";
 export const PAR_MODE_EDITER: string = "editer";

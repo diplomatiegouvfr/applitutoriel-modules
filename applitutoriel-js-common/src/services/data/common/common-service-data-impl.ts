@@ -81,13 +81,13 @@
 import { HornetRequest } from 'hornet-js-core/src/services/hornet-superagent-request';
 import { ServiceRequest } from 'hornet-js-core/src/services/service-request';
 import { Utils } from 'hornet-js-utils';
-import { Logger } from 'hornet-js-utils/src/logger';
+import { Logger } from "hornet-js-logger/src/logger";
 import { Promise } from 'hornet-js-utils/src/promise-api';
 import * as URLS from 'src/utils/urls';
 
 import { CommonServiceData } from 'src/services/data/common/common-service-data';
-import * as featureFlipping from "applitutoriel-js-common/src/resources/featureflipping.json";
-const logger: Logger = Utils.getLogger('applitutoriel.services.data.common.common-service-data-impl');
+import * as featureFlipping from "src/resources/featureflipping.json";
+const logger: Logger = Logger.getLogger('applitutoriel.services.data.common.common-service-data-impl');
 
 export class CommonServiceDataImpl extends ServiceRequest implements CommonServiceData {
 

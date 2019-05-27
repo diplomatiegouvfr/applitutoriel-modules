@@ -78,7 +78,8 @@
  * @license CECILL-2.1
  */
 
-import { ApplitutorielSecteursServiceImpl } from "applitutoriel-js-common/src/services/applitutoriel-secteurs-service-impl";
+import { ApplitutorielSecteursServiceImpl } from "src/services/applitutoriel-secteurs-service-impl";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
 /**
  * Interface des services pour les secteurs

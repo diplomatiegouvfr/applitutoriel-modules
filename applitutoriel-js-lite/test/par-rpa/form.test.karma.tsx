@@ -82,27 +82,15 @@
 'use strict';
 var chai = require('chai');
 const expect = chai.expect;
-import * as _ from "lodash";
 import * as React from "react";
 import { Utils } from "hornet-js-utils";
 Utils.setConfigObj({});
 
-import { BaseTest } from "hornet-js-test/src/base-test";
 import { runTest } from "hornet-js-test/src/test-run";
 import { Decorators } from "hornet-js-test/src/decorators";
-import { SortData, SortDirection } from "hornet-js-core/src/component/sort-data";
 import * as assert from "assert";
 
-import { DataSource } from "hornet-js-core/src/component/datasource/datasource";
-import { Table } from "hornet-js-react-components/src/widget/table/table";
-import { Header } from "hornet-js-react-components/src/widget/table/header";
-/* Composant Content */
-import { Content } from "hornet-js-react-components/src/widget/table/content";
-/*  Colonne du tableau */
-import { Column } from "hornet-js-react-components/src/widget/table/column";
-import { Columns } from "hornet-js-react-components/src/widget/table/columns";
-import { CheckColumn } from "hornet-js-react-components/src/widget/table/column/check-column";
-import * as message from "applitutoriel-js-common/src/resources/messages-fr-FR.json";
+const message = require("applitutoriel-js-common/src/resources/messages-fr-FR.json");
 import { RecherchePartenairesPage } from "applitutoriel-js-common/src/views/par/par-rpa-page"
 import { PartenaireServicePageMockImpl } from "applitutoriel-js-common/src/mock/services/page/par/partenaire-service-page-mock-impl";
 import { PageRouteInfos } from "hornet-js-core/src/routes/abstract-routes";
@@ -145,7 +133,7 @@ class RecherchePartenairesPageTest extends HornetReactTest {
         setTimeout(() => {
             let htmlElement = document.querySelector(selector);
             expect(htmlElement, "doit déclencher une erreur.").to.be.exist;
-            expect(_.isEqual(htmlElement.innerHTML, expected), "doit déclencher une erreur").to.be.true;
+            expect(htmlElement.innerHTML === expected, "doit déclencher une erreur").to.be.true;
             if (end) this.end();
         }, 500)
     }

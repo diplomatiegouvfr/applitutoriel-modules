@@ -78,18 +78,13 @@
  * @license CECILL-2.1
  */
 
-import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { UtilisateurDAO } from "src/dao/utilisateur-dao";
 import { UtilisateurMetier } from "applitutoriel-js-common/src/models/user-mod";
 import { AuthService } from "applitutoriel-js-common/src/services/data/auth/auth-service";
-import { Response } from "superagent";
-import { UtilisateurAttributes } from "src/models/seq-user-mod";
-import { HornetSequelizeInstanceModel } from "hornet-js-database/src/sequelize/hornet-sequelize-attributes";
-import { ModelDAO } from "src/dao/model-dao";
-import { BeanUtils } from "hornet-js-bean/src/bean-utils";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel.src.services.data.auth.auth-service-data-impl");
+const logger: Logger = Logger.getLogger("applitutoriel.src.services.data.auth.auth-service-data-impl");
 
 export class AuthServiceImpl extends AuthService {
     private utilisateurDAO: UtilisateurDAO = new UtilisateurDAO();

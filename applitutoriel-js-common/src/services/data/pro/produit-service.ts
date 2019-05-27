@@ -69,6 +69,8 @@
  *
  */
 
+import { Promise } from "hornet-js-utils/src/promise-api";
+
 /**
  * applitutoriel-js-common - Application tutoriel utilisant le Framework hornet
  *

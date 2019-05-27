@@ -80,10 +80,10 @@
 
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { ServicePage } from "hornet-js-core/src/services/service-page";
 
-const logger: Logger = Utils.getLogger("applitutoriel.services.page.adm.applitutoriel-secteurs-service-impl");
+const logger: Logger = Logger.getLogger("applitutoriel.services.page.adm.applitutoriel-secteurs-service-impl");
 
 /**
  * Exemple de surcharge de la classe ServiceApi fournie par le framework

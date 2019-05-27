@@ -11,7 +11,7 @@ var expect = TestUtils.chai.expect;
 var render = TestUtils.render;
 
 // initialisation du logger
-var logger = TestUtils.getLogger('applitutoriel.test.page.exemple-page-spec');
+var logger = TestLogger.getLogger('applitutoriel.test.page.exemple-page-spec');
 
 var ExamplePage = require('test/page/example-page');
 

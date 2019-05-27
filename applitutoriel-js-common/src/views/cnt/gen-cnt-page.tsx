@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as React from "react";
 import { HornetPage } from "hornet-js-react-components/src/widget/component/hornet-page";
 import { HornetComponentProps } from "hornet-js-components/src/component/ihornet-component";
@@ -99,7 +99,7 @@ import { ButtonsArea } from "hornet-js-react-components/src/widget/form/buttons-
 
 import * as schema from "src/views/cnt/gen-cnt-page-validation.json";
 
-const logger: Logger = Utils.getLogger("applitutoriel.views.cnt.gen-cnt-page");
+const logger: Logger = Logger.getLogger("applitutoriel.views.cnt.gen-cnt-page");
 
 export class ContactPage extends HornetPage<ContactService, HornetComponentProps, any> {
 

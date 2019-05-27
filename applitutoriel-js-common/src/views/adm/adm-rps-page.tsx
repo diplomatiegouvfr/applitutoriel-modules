@@ -80,7 +80,7 @@
 
 import * as React from "react";
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { HornetPage } from "hornet-js-react-components/src/widget/component/hornet-page";
 import { HornetComponentProps } from "hornet-js-components/src/component/ihornet-component";
 import { Button } from "hornet-js-react-components/src/widget/button/button";
@@ -88,7 +88,7 @@ import { FicheProduitService } from "src/services/page/adm/adm-fpo-service-page"
 import { ButtonsArea } from "hornet-js-react-components/src/widget/form/buttons-area";
 import * as Chart from "chart.js";
 
-const logger: Logger = Utils.getLogger("applitutoriel.views.adm.adm-rps-page");
+const logger: Logger = Logger.getLogger("applitutoriel.views.adm.adm-rps-page");
 
 export class RepartitionPage extends HornetPage<FicheProduitService, HornetComponentProps, any> {
 

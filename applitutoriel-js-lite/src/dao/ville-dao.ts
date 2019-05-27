@@ -78,21 +78,19 @@
  * @license CECILL-2.1
  */
 
-import { Utils } from "hornet-js-utils";
-import { Class } from "hornet-js-utils/src/typescript-utils";
-import { Logger } from "hornet-js-utils/src/logger";
-import { HornetSequelizeEntityAttributes,
-    HornetSequelizeInstanceModel } from "hornet-js-database/src/sequelize/hornet-sequelize-attributes";
+import { Logger } from "hornet-js-logger/src/logger";
+import { HornetSequelizeInstanceModel } from "hornet-js-database/src/sequelize/hornet-sequelize-attributes";
 import { HornetGenericDAO, Criteria } from "hornet-js-database/src/sequelize/hornet-generic-dao";
 import { inject } from "hornet-js-core/src/inject/inject";
 import { ModelDAO } from "src/dao/model-dao";
 import { injectable } from "hornet-js-core/src/inject/injectable";
-import { HornetSequelizeModel } from "hornet-js-database/src/sequelize/hornet-sequelize-model";
 import Map from "hornet-js-bean/src/decorators/Map";
 import { VilleMetier } from "applitutoriel-js-common/src/models/ref/ref-ville-mod";
 import { VilleAttributes } from "src/models/ref/ref-ville-mod";
 
-const logger: Logger = Utils.getLogger("applitutoriel.src.dao.ville-dao");
+import { Promise } from "hornet-js-utils/src/promise-api";
+
+const logger: Logger = Logger.getLogger("applitutoriel.src.dao.ville-dao");
 
 @injectable()
 export class VilleDAO extends HornetGenericDAO<ModelDAO, HornetSequelizeInstanceModel<VilleAttributes>> {

@@ -10,12 +10,11 @@ module.exports = {
         conf.generatedTypings.file = project.name + ".d.ts";
     },
     externalModules: {
-
         enabled: false,
         directories: []
     },
     config: {
-        autoGenerateIndex: false
+        autoGenerateIndex: true
         /*typescript: {
             bin: __dirname + "/node_modules/build/typescript"
         }*/

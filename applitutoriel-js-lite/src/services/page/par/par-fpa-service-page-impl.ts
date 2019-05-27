@@ -80,16 +80,15 @@
 
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { ServicePage } from "hornet-js-core/src/services/service-page";
-import * as _ from "lodash";
-import { URL_PAR_PHOTO, URL_PARTENAIRES } from "applitutoriel-js-common/src/utils/urls";
+import { URL_PAR_PHOTO, URL_PARTENAIRES, URL_SECTEURS } from "applitutoriel-js-common/src/utils/urls";
 import { ReferentielPaysServiceImpl } from "src/services/page/ref/ref-pays-service-impl";
 import { HornetRequest, SpinnerType } from "hornet-js-core/src/services/hornet-superagent-request";
 import { FichePartenairePageService } from "applitutoriel-js-common/src/services/page/par/par-fpa-service";
-import { URL_SECTEURS } from "applitutoriel-js-common/src/utils/urls";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel.services.page.par.par-fpa-service-page-impl");
+const logger: Logger = Logger.getLogger("applitutoriel.services.page.par.par-fpa-service-page-impl");
 
 /**
  * Implementation des services pour les partenaires
@@ -149,7 +148,7 @@ export class FichePartenaireServiceImpl extends ServicePage implements FichePart
      * @param {object} process function à appeler pendant la progress de la request
      * @return Promise<object>
      */
-    modifier(id: number, partenaire: any, progress: Function): Promise<any> {
+    modifier(id: number, partenaire: any, progress: (event: any) => void): Promise<any> {
 
         let request: HornetRequest = { method: "put", url: this.buildUrl(URL_PARTENAIRES) + "/" + id };
 
@@ -215,9 +214,9 @@ export class FichePartenaireServiceImpl extends ServicePage implements FichePart
      */
     protected convertToRemotePartenaire(webPartenaire: any): any {
 
-        let remotePartenaire: any = _.assign({}, webPartenaire);
+        let remotePartenaire: any = {...webPartenaire};
         remotePartenaire.satisfaction =
-            (_.isArray(webPartenaire.satisfaction)) ? webPartenaire.satisfaction.join(",") : webPartenaire.satisfaction;
+            (Array.isArray(webPartenaire.satisfaction)) ? webPartenaire.satisfaction.join(",") : webPartenaire.satisfaction;
 
         if (remotePartenaire.photo && remotePartenaire.photo.contenu) {
             let photo: any = remotePartenaire.photo;

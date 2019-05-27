@@ -78,8 +78,8 @@
  * @license CECILL-2.1
  */
 
-import { AuthenticationMiddleware } from "applitutoriel-js-common/src/middleware/authentication";
-import { AuthService } from "applitutoriel-js-common/src/services/data/auth/auth-service";
+import { AuthenticationMiddleware } from "src/middleware/authentication";
+import { AuthService } from "src/services/data/auth/auth-service";
 
 import { Injector } from "hornet-js-core/src/inject/injector";
 

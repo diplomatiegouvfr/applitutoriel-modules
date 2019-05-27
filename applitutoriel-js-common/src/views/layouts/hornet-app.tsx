@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as React from "react";
 import { Class } from "hornet-js-utils/src/typescript-utils";
 import { HornetPage, HornetPageProps } from "hornet-js-react-components/src/widget/component/hornet-page";
@@ -104,7 +104,7 @@ import * as _ from "lodash";
 import * as classNames from "classnames";
 import { UPDATE_PAGE_EXPAND } from "hornet-js-react-components/src/widget/screen/layout-switcher";
 
-const logger: Logger = Utils.getLogger("applitutoriel.views.layouts.hornet-app");
+const logger: Logger = Logger.getLogger("applitutoriel.views.layouts.hornet-app");
 
 const users = {
     "user":

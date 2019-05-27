@@ -79,24 +79,24 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as _ from "lodash";
-import { URL_PAR_PHOTO, URL_PARTENAIRES } from "applitutoriel-js-common/src/utils/urls";
+import { URL_PAR_PHOTO, URL_PARTENAIRES } from "src/utils/urls";
 import { HornetRequest, SpinnerType } from "hornet-js-core/src/services/hornet-superagent-request";
-import { FichePartenairePageService } from "applitutoriel-js-common/src/services/page/par/par-fpa-service";
+import { FichePartenairePageService } from "src/services/page/par/par-fpa-service";
 import { Promise } from "hornet-js-utils/src/promise-api";
-import { ReferentielPaysServicePageMockImpl } from "applitutoriel-js-common/src/mock/services/page/ref/ref-pays-service-page-mock-impl";
-import { PartenaireResult } from "applitutoriel-js-common/src/services/type/par/par-types";
-import * as secteurs from "applitutoriel-js-common/src/resources/mock/adm/adm-lst-data.json";
-import * as tableauDePartenaires1 from "applitutoriel-js-common/src/resources/mock/par/par-rpa-data-1.json";
-import * as tableauDePartenaires2 from "applitutoriel-js-common/src/resources/mock/par/par-rpa-data-2.json";
-import * as tableauDePartenaires3 from "applitutoriel-js-common/src/resources/mock/par/par-rpa-data-3.json";
-import * as tableauDePartenaires4 from "applitutoriel-js-common/src/resources/mock/par/par-rpa-data-4.json";
-import * as villes from "applitutoriel-js-common/src/resources/mock/par/par-rpa-villes.json";
-import * as pays from "applitutoriel-js-common/src/resources/mock/par/par-pays-data.json";
+import { ReferentielPaysServicePageMockImpl } from "src/mock/services/page/ref/ref-pays-service-page-mock-impl";
+import { PartenaireResult } from "src/services/type/par/par-types";
+import * as secteurs from "src/resources/mock/adm/adm-lst-data.json";
+import * as tableauDePartenaires1 from "src/resources/mock/par/par-rpa-data-1.json";
+import * as tableauDePartenaires2 from "src/resources/mock/par/par-rpa-data-2.json";
+import * as tableauDePartenaires3 from "src/resources/mock/par/par-rpa-data-3.json";
+import * as tableauDePartenaires4 from "src/resources/mock/par/par-rpa-data-4.json";
+import * as villes from "src/resources/mock/par/par-rpa-villes.json";
+import * as pays from "src/resources/mock/par/par-pays-data.json";
 import { ReferentielPaysService } from "src/services/data/ref/ref-pays-service";
 
-const logger: Logger = Utils.getLogger("applitutoriel-js-common.mock.services.data.par.fiche-partenaire-service-mock-impl");
+const logger: Logger = Logger.getLogger("applitutoriel-js-common.mock.services.data.par.fiche-partenaire-service-mock-impl");
 
 /**
  * Implementation des services pour les partenaires 

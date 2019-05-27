@@ -1,15 +1,5 @@
 var path = require("path");
 
-const clientContext = [
-    [/moment[\/\\]locale$/, /fr|en/],
-    [/intl[\/\\]locale-data[\/\\]jsonp$/, /(fr|en)$/],
-    [/^\.$/, (context) => {
-        if (!/\/log4js\/lib$/.test(context.context)) return;
-        context.regExp = /^\.\/appenders\/console.*$/;
-        context.request = ".";
-    }]
-];
-
 module.exports = {
     type: "application",
     authorizedPrerelease: "true",
@@ -81,46 +71,29 @@ module.exports = {
                 "pdfmake/src/printer",
                 "pdfkit",
                 "nodemailer",
-                "fontkit"
+                "fontkit",
+                "tls",
+                "child_process"
             ]
-        },
-        clientContext: clientContext,
-        karma: {
-            browsers: ["FirefoxHeadless"],
-            customLaunchers: {
-              FirefoxHeadless: {
-                base: 'Firefox',
-                flags: [ '-headless' ],
-              },
-            },            
-            template: {
-                debug: "./test/template/debug.html",
-                context: "./test/template/context.html",
-                clientContext: "./test/template/client_with_context.html"
-            },
-            clientContext: clientContext,
-            clientExclude: {
-                modules: ["cluster", "continuation-local-storage", "config"]
-            }
         },
         /*typescript: {
             bin: __dirname + "/node_modules/build/typescript"
         },*/
         template: [{
             context: [{
-                    error: "404",
-                    suffixe: "_404",
-                    message: "Oops! Nous ne trouvons pas ce que vous cherchez!"
-                }, {
-                    error: "500",
-                    suffixe: "_500",
-                    message: "Oops! Une erreur est survenue!"
-                },
-                {
-                    error: "403",
-                    suffixe: "_403",
-                    message: "Oops! Accès interdit !"
-                }
+                error: "404",
+                suffixe: "_404",
+                message: "Oops! Nous ne trouvons pas ce que vous cherchez!"
+            }, {
+                error: "500",
+                suffixe: "_500",
+                message: "Oops! Une erreur est survenue!"
+            },
+            {
+                error: "403",
+                suffixe: "_403",
+                message: "Oops! Accès interdit !"
+            }
             ],
             dir: "./template/error",
             dest: "/error"
@@ -129,11 +102,6 @@ module.exports = {
                 message: "test template"
             }
         }],
-        spaResources: [path.join("..", "applitutoriel-js-common", "src", "resources") + "**/*.json"],
-        dev: {
-            dllEntry: {
-                vendor: ["hornet-js-react-components", "hornet-js-components", "hornet-js-utils", "hornet-js-core", "hornet-js-bean"]
-            }
-        }
+        spaResources: [path.join("..", "applitutoriel-js-common", "src", "resources") + "**/*.json"]
     }
 };

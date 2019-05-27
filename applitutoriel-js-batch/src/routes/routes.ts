@@ -84,7 +84,7 @@ import { AbstractRoutes, PUBLIC_ROUTE, DataRouteInfos } from "hornet-js-core/src
 import {
     CreerSecteurBatch, DeleteAllSecteursByForEachBatch, GenererSecteurBatch, ModifierSecteurBatch,
     ModifierSecteurByForEachBatch,
-    NettoyerSecteurBatch, SupprimerSecteurByForEachBatch
+    NettoyerSecteurBatch, SupprimerSecteurByForEachBatch,
 } from "src/actions/adm/secteurs-batch";
 
 export class Routes extends AbstractRoutes {

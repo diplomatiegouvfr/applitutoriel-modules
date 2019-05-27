@@ -79,20 +79,20 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { MediaType } from "hornet-js-core/src/protocol/media-type";
-import { PartenaireResult } from "applitutoriel-js-common/src/services/type/par/par-types";
-import { PartenaireRechercheParameter } from "applitutoriel-js-common/src/services/type/par/par-rpa-prm";
-import { PartenaireService } from "applitutoriel-js-common/src/services/data/par/partenaire-service";
+import { PartenaireResult } from "src/services/type/par/par-types";
+import { PartenaireRechercheParameter } from "src/services/type/par/par-rpa-prm";
+import { PartenaireService } from "src/services/data/par/partenaire-service";
 import { NotFoundError } from "hornet-js-utils/src/exception/not-found-error";
 import { Promise } from "hornet-js-utils/src/promise-api";
 import * as _ from "lodash";
 
-import * as tableauDePartenaires from "applitutoriel-js-common/src/resources/mock/par/par-rpa-data.json";
-import * as villes from "applitutoriel-js-common/src/resources/mock/par/par-rpa-villes.json";
-import * as pays from "applitutoriel-js-common/src/resources/mock/par/par-pays-data.json";
+import * as tableauDePartenaires from "src/resources/mock/par/par-rpa-data.json";
+import * as villes from "src/resources/mock/par/par-rpa-villes.json";
+import * as pays from "src/resources/mock/par/par-pays-data.json";
 
-const logger: Logger = Utils.getLogger("applitutoriel-js-common.mock.services.data.par.partenaire-service-data-mock-impl");
+const logger: Logger = Logger.getLogger("applitutoriel-js-common.mock.services.data.par.partenaire-service-data-mock-impl");
 
 /**
  * Implementation des services pour les partenaires

@@ -79,8 +79,9 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as React from "react";
+import * as _ from "lodash";
 import { HornetPage } from "hornet-js-react-components/src/widget/component/hornet-page";
 import { HornetComponentProps } from "hornet-js-components/src/component/ihornet-component";
 import { Modal } from "hornet-js-react-components/src/widget/dialog/modal";
@@ -112,7 +113,7 @@ import { SortDirection } from "hornet-js-core/src/component/sort-data";
 import * as schema from "src/views/adm/adm-lst-page-validation.json";
 import * as schemaEditionTable from "src/views/adm/adm-lst-table-validation.json";
 
-const logger: Logger = Utils.getLogger("applitutoriel.views.adm.adm-lst-page");
+const logger: Logger = Logger.getLogger("applitutoriel.views.adm.adm-lst-page");
 
 /**
  * Page d'administration des secteurs. L'ajout ou l'édition d'un secteur se fait dans une fenêtre modale.

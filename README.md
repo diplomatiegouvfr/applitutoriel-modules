@@ -51,17 +51,29 @@ hb compile
 
 Se positionner dans le module : `applitutoriel-js-lite`
 
-### Commande par défaut
+### Commande par défaut avec le projet hornet-js-builder-new installé en global
 
 la commande à exécuter en mode développement est la suivante:
 
 ```shell
-hb w
+hbn w
 ```
 
 Elle permet de lancer l'application en mode `watcher` afin que les modifications soient prises en compte (ce qui
 entrainera un redémarrage du serveur node dans le cas d'une détection de modification).
 
+### Commande par défaut avec le projet hornet-js-builder-new en dépendance du projet
+
+les commandes à exécuter sont les suivantes :
+
+```shell
+npm i -E
+```
+puis
+
+```shell
+npm start
+```
 
 ## Vérification
 

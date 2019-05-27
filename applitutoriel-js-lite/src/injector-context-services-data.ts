@@ -84,7 +84,6 @@ import { AuthService } from "applitutoriel-js-common/src/services/data/auth/auth
 import { AdministrationSecteurServiceData } from "applitutoriel-js-common/src/services/data/adm/adm-secteur-service-data";
 import { PartenaireService } from "applitutoriel-js-common/src/services/data/par/partenaire-service";
 import { ReferentielPaysService } from "applitutoriel-js-common/src/services/data/ref/ref-pays-service";
-import { FicheProduitService } from "applitutoriel-js-common/src/services/data/adm/adm-fpo-service-page";
 
 // Injector pour databaseConfigName doit être réalisé avant les imports des implementations de services car il est utilisé
 // dans ceux ci

@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as React from "react";
 import { HornetPage, HornetPageProps } from "hornet-js-react-components/src/widget/component/hornet-page";
 import { Notification } from "hornet-js-react-components/src/widget/notification/notification";
@@ -140,7 +140,7 @@ import { SortData } from "hornet-js-core/src/component/sort-data";
 import * as schema from "src/views/par/par-rpa-validation.json";
 import { timingSafeEqual } from 'crypto';
 
-const logger: Logger = Utils.getLogger("applitutoriel.views.par.par-rpa-page");
+const logger: Logger = Logger.getLogger("applitutoriel.views.par.par-rpa-page");
 
 /**
  * Page de recherche des partenaires. L'ajout ou la modification d'un partenaire se fait dans une fiche indépendante
@@ -497,19 +497,6 @@ export class RecherchePartenairesPage extends HornetPage<RecherchePartenaireServ
     private isAdmin(): boolean {
         logger.trace(Roles.ADMIN_STR);
         return AuthUtils.hasRole(this.user, Roles.ADMIN_STR);
-    }
-
-    /**
-     * Surcharge le style CSS de certaines lignes
-     * @param partenaire élément correspondant à une ligne de tableau
-     * @returns la/les classes CSS à appliquer à la ligne correspondant à item
-     */
-    private static customRowsClasses(partenaire: any): ClassDictionary {
-        return {
-            /*"green-background-row": (partenaire.nom == "ALBERT"),
-             "red-background-row": (partenaire.nom == "ALFRED"),
-             "yellow-background-row": (partenaire.nom == "BAZIN")*/
-        };
     }
 
     /**

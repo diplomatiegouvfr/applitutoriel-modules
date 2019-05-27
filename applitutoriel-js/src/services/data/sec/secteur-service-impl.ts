@@ -79,16 +79,15 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { ApplitutorielSecteursServiceImpl } from "applitutoriel-js-common/src/services/applitutoriel-secteurs-service-impl";
 import { URL_SECTEURS } from "applitutoriel-js-common/src/utils/urls";
 import { AdministrationSecteurServiceData } from "applitutoriel-js-common/src/services/data/adm/adm-secteur-service-data";
 
 import { ServiceSecure } from "hornet-js-core/src/services/service-secure";
-import { Response } from "superagent";
 import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel.services.adm.secteur-service-data-impl");
+const logger: Logger = Logger.getLogger("applitutoriel.services.adm.secteur-service-data-impl");
 
 /**
  * Implementation des services pour les secteurs

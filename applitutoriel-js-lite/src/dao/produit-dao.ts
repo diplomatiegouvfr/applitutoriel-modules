@@ -78,19 +78,16 @@
  * @license CECILL-2.1
  */
 
-import { Utils } from "hornet-js-utils";
-import { Class } from "hornet-js-utils/src/typescript-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { HornetSequelizeEntityAttributes,
     HornetSequelizeInstanceModel } from "hornet-js-database/src/sequelize/hornet-sequelize-attributes";
 import { HornetGenericDAO } from "hornet-js-database/src/sequelize/hornet-generic-dao";
 import { inject } from "hornet-js-core/src/inject/inject";
 import { ModelDAO } from "src/dao/model-dao";
 import { injectable } from "hornet-js-core/src/inject/injectable";
-import { HornetSequelizeModel } from "hornet-js-database/src/sequelize/hornet-sequelize-model";
 import { SequelizeUtils } from "hornet-js-database/src/sequelize/sequelize-utils";
 
-const logger: Logger = Utils.getLogger("applitutoriel.src.dao.produit-dao");
+const logger: Logger = Logger.getLogger("applitutoriel.src.dao.produit-dao");
 
 @injectable()
 export class ProduitDAO extends HornetGenericDAO<ModelDAO, HornetSequelizeInstanceModel<HornetSequelizeEntityAttributes>> {

@@ -80,10 +80,10 @@
 
 import { Utils } from "hornet-js-utils";
 import { MediaType } from "hornet-js-core/src/protocol/media-type";
-import { PartenaireRechercheParameter } from "applitutoriel-js-common/src/services/type/par/par-rpa-prm";
-import { PartenaireResult } from "applitutoriel-js-common/src/services/type/par/par-types";
+import { PartenaireRechercheParameter } from "src/services/type/par/par-rpa-prm";
+import { PartenaireResult } from "src/services/type/par/par-types";
 import { ServiceSecure } from "hornet-js-core/src/services/service-secure";
-import { Response } from "superagent";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
 export abstract class PartenaireService extends ServiceSecure {
 

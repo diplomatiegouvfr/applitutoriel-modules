@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as React from "react";
 import * as _ from "lodash";
 import { Form } from "hornet-js-react-components/src/widget/form/form";
@@ -124,7 +124,7 @@ import SyntheticEvent = React.SyntheticEvent;
 
 import * as schema from "src/views/par/par-fpa/validation.json";
 
-const logger: Logger = Utils.getLogger("applitutoriel.views.par.par-fpa.identite-tab");
+const logger: Logger = Logger.getLogger("applitutoriel.views.par.par-fpa.identite-tab");
 
 export const PAR_MODE_CONSULTER: string = "consulter";
 export const PAR_MODE_EDITER: string = "editer";

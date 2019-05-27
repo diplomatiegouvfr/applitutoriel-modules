@@ -78,19 +78,16 @@
  * @license CECILL-2.1
  */
 
-import { Utils } from "hornet-js-utils";
-import { Class } from "hornet-js-utils/src/typescript-utils";
-import { Logger } from "hornet-js-utils/src/logger";
-import { HornetSequelizeEntityAttributes,
+import { Logger } from "hornet-js-logger/src/logger";
+import {
     HornetSequelizeInstanceModel } from "hornet-js-database/src/sequelize/hornet-sequelize-attributes";
 import { HornetGenericDAO } from "hornet-js-database/src/sequelize/hornet-generic-dao";
 import { inject } from "hornet-js-core/src/inject/inject";
 import { ModelDAO } from "src/dao/model-dao";
 import { injectable } from "hornet-js-core/src/inject/injectable";
-import { HornetSequelizeModel } from "hornet-js-database/src/sequelize/hornet-sequelize-model";
 import { CiviliteAttributes } from "src/models/ref/ref-civilite-mod";
 
-const logger: Logger = Utils.getLogger("applitutoriel.src.dao.civilite-dao");
+const logger: Logger = Logger.getLogger("applitutoriel.src.dao.civilite-dao");
 
 @injectable()
 export class CiviliteDAO extends HornetGenericDAO<ModelDAO, HornetSequelizeInstanceModel<CiviliteAttributes>> {

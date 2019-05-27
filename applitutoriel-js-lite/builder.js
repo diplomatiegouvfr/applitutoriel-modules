@@ -1,15 +1,5 @@
 const path = require("path");
 
-const clientContext = [
-    [/moment[\/\\]locale$/, /fr|en/],
-    [/intl[\/\\]locale-data[\/\\]jsonp$/, /fr|en/],
-    [/^\.$/, (context) => {
-        if (!/\/log4js\/lib$/.test(context.context)) return;
-        context.regExp = /^\.\/appenders\/console.*$/;
-        context.request = ".";
-    }]
-];
-
 module.exports = {
     type: "application",
     authorizedPrerelease: "true",
@@ -24,10 +14,10 @@ module.exports = {
             helper.info("Exemple after compile task");
         });
          */
-        helper.excludeNodeModulesFromWebpack(
+        /*helper.excludeNodeModulesFromWebpack(
             ["config", "continuation-local-storage", "sequelize", "pdfmake", "carbone", "csv-parser", "nodemailer"],
             conf.webPackConfiguration
-        );
+        );*/
         // Exemple d'exclusion de fichiers/répertoires local à l'application
         // Cet exemple est complètement inutile puisque le client.js n'est pas dépendant des middlewares
         // Il est là à titre d'exemple uniquement
@@ -85,56 +75,45 @@ module.exports = {
                 "carbone",
                 "csv-parser",
                 "nodemailer",
-                "tls"
+                "tls",
+                "child_process"
             ]
-        },
-        clientContext: clientContext,
-        karma: {
-            browsers: ["FirefoxHeadless"],
-            customLaunchers: {
-              FirefoxHeadless: {
-                base: 'Firefox',
-                flags: [ '-headless' ],
-              },
-            },            
-            template: {
-                debug: "./test/template/debug.html",
-                context: "./test/template/context.html",
-                clientContext: "./test/template/client_with_context.html"
-            },
-            clientContext: clientContext,
-            clientExclude: {
-                modules: ["cluster", "continuation-local-storage", "config", "cluster"]
-            }
         },
         template: [{
             context: [{
-                    error: "404",
-                    suffixe: "_404",
-                    message: "Oops! Nous ne trouvons pas ce que vous cherchez!"
-                }, {
-                    error: "500",
-                    suffixe: "_500",
-                    message: "Oops! Une erreur est survenue!"
-                },
-                {
-                    error: "403",
-                    suffixe: "_403",
-                    message: "Oops! Accès interdit!"
+                error: "404",
+                suffixe: "_404",
+                message: "Oops! Nous ne trouvons pas ce que vous cherchez!",
+                messages: {
+                    "applicationTitle": "Application TUTORIEL"
                 }
+            }, {
+                error: "500",
+                suffixe: "_500",
+                message: "Oops! Une erreur est survenue!",
+                messages: {
+                    "applicationTitle": "Application TUTORIEL"
+                }
+            },
+            {
+                error: "403",
+                suffixe: "_403",
+                message: "Oops! Accès interdit!",
+                messages: {
+                    "applicationTitle": "Application TUTORIEL"
+                }
+            }
             ],
             dir: "./template/error",
             dest: "/error"
         }, {
             context: {
-                message: "test template"
+                message: "test template",
+                messages: {
+                    "applicationTitle": "Application TUTORIEL"
+                }
             }
         }],
-        dev: {
-            dllEntry: {
-                vendor: ["hornet-js-react-components", "hornet-js-components", "hornet-js-utils", "hornet-js-core", "hornet-js-bean"]
-            }
-        },
         /*typescript: {
             bin: __dirname + "/node_modules/build/typescript"
         }*/

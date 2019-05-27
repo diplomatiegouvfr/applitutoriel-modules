@@ -78,21 +78,16 @@
  * @license CECILL-2.1
  */
 
-import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { BusinessError } from "hornet-js-utils/src/exception/business-error";
 import { PaysDAO } from "src/dao/pays-dao";
 import { VilleDAO } from "src/dao/ville-dao";
 import { ReferentielPaysService } from "applitutoriel-js-common/src/services/page/ref/ref-pays-service";
 import { PaysMetier } from "applitutoriel-js-common/src/models/ref/ref-pay-mod";
 import { VilleMetier } from "applitutoriel-js-common/src/models/ref/ref-ville-mod";
-import { ModelDAO } from "src/dao/model-dao";
-import { HornetSequelizeInstanceModel } from "hornet-js-database/src/sequelize/hornet-sequelize-attributes";
-import { VilleAttributes } from "src/models/ref/ref-ville-mod";
-import { PaysAttributes } from "src/models/ref/ref-pay-mod";
-import { BeanUtils } from "hornet-js-bean/src/bean-utils";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel.src.services.ref.ref-pays-service-impl");
+const logger: Logger = Logger.getLogger("applitutoriel.src.services.ref.ref-pays-service-impl");
 
 export class ReferentielPaysServiceImpl extends ReferentielPaysService {
     private paysDAO: PaysDAO = new PaysDAO();

@@ -83,7 +83,7 @@ import { PageRouteInfos, RouteInfos, RouteType } from 'hornet-js-core/src/routes
 import { PageRenderingMiddleware } from 'hornet-js-react-components/src/middleware/component-middleware';
 import { Utils } from 'hornet-js-utils';
 import { HttpError } from 'hornet-js-utils/src/exception/http-error';
-import { Logger } from 'hornet-js-utils/src/logger';
+import { Logger } from "hornet-js-logger/src/logger";
 import { Class } from 'hornet-js-utils/src/typescript-utils';
 import { CommonServiceData } from 'src/services/data/common/common-service-data';
 import { CommonServiceDataImpl } from "src/services/data/common/common-service-data-impl";
@@ -93,10 +93,10 @@ import { SecurityError } from "hornet-js-utils/src/exception/security-error";
 // // PageRenderingMiddleware
 // -------------------------------------------------------------------------------------------------------------------
 // //
-const logger: Logger = Utils.getLogger('middleware.PageRenderingMiddleware');
+const logger: Logger = Logger.getLogger('middleware.PageRenderingMiddleware');
 
 export class FeaturePageRenderingMiddleware extends AbstractHornetMiddleware {
-    private static logger: Logger = Utils.getLogger('hornet-js-react-components.middleware.FeaturePageRenderingMiddleware');
+    private static logger: Logger = Logger.getLogger('hornet-js-react-components.middleware.FeaturePageRenderingMiddleware');
 
     private commonService: CommonServiceData = new CommonServiceDataImpl();
 

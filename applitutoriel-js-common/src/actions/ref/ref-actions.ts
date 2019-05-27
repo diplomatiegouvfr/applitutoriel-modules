@@ -79,11 +79,12 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { ReferentielPaysService } from "src/services/page/ref/ref-pays-service";
 import { RouteActionService } from "hornet-js-core/src/routes/abstract-routes";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel.actions.ref.ref-actions");
+const logger: Logger = Logger.getLogger("applitutoriel.actions.ref.ref-actions");
 
 export class ListerPays extends RouteActionService<any, ReferentielPaysService> {
     execute(): Promise<any> {

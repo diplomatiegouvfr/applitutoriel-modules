@@ -77,8 +77,7 @@
  * @link git+https://github.com/diplomatiegouvfr/applitutoriel-modules.git
  * @license CECILL-2.1
  */
-import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { VilleAttributes, VilleModel } from "src/models/ref/ref-ville-mod";
 import { PaysAttributes, PaysModel } from "src/models/ref/ref-pay-mod";
 import { SecteurAttributes, SecteurModel } from "src/models/adm/seq-sec-mod";
@@ -95,10 +94,9 @@ import { SequelizeUtils } from "hornet-js-database/src/sequelize/sequelize-utils
 import { injectable, Scope, Side } from "hornet-js-core/src/inject/injectable";
 import { inject } from "hornet-js-core/src/inject/inject";
 import { HornetSequelizeInstanceModel } from "hornet-js-database/src/sequelize/hornet-sequelize-attributes";
-import { DbConnect } from "hornet-js-database/src/sequelize/dbconnect-sequelize";
 import { HornetSequelizeModel } from "hornet-js-database/src/sequelize/hornet-sequelize-model";
 
-const logger: Logger = Utils.getLogger("applitutoriel.src.dao.model-dao");
+const logger: Logger = Logger.getLogger("applitutoriel.src.dao.model-dao");
 
 @injectable(ModelDAO, Scope.SINGLETON, Side.SERVER)
 export class ModelDAO extends HornetSequelizeModel {

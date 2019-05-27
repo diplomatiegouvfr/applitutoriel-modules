@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 
 import * as _ from "lodash";
 import { PartenaireService } from "src/services/data/par/partenaire-service";
@@ -101,11 +101,11 @@ import { OptionsCSV, OptionsOpenDocument, OptionsPDF } from "hornet-js-core/src/
 import { DateUtils } from "hornet-js-utils/src/date-utils";
 import { ResultODT } from "hornet-js-core/src/result/result-odt";
 import { ResultODS } from "hornet-js-core/src/result/result-ods";
-
+import { Promise } from "hornet-js-utils/src/promise-api";
 import * as path from "path";
 
 import * as rpaValidationSchema from "src/views/par/par-rpa-validation.json";
-const logger: Logger = Utils.getLogger("applitutoriel.actions.par.par-rpa-actions");
+const logger: Logger = Logger.getLogger("applitutoriel.actions.par.par-rpa-actions");
 
 /**
  * Action de recherche de partenaires répondant aux critères indiqués

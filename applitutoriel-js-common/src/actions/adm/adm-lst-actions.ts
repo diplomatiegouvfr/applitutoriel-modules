@@ -78,12 +78,12 @@
  * @license CECILL-2.1
  */
 
-import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { RouteActionService } from "hornet-js-core/src/routes/abstract-routes";
 import { AdministrationSecteurServiceData } from "src/services/data/adm/adm-secteur-service-data";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel.actions.adm.adm-lst-actions");
+const logger: Logger = Logger.getLogger("applitutoriel.actions.adm.adm-lst-actions");
 
 export class ListerSecteurs extends RouteActionService<any, AdministrationSecteurServiceData> {
     execute(): Promise<any> {

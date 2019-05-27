@@ -79,12 +79,11 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
-import { AuthService } from "applitutoriel-js-common/src/services/data/auth/auth-service";
-import { Response } from "superagent";
+import { Logger } from "hornet-js-logger/src/logger";
+import { AuthService } from "src/services/data/auth/auth-service";
 import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel-js-common.mock.services.data.auth.auth-service-data-mock-impl");
+const logger: Logger = Logger.getLogger("applitutoriel-js-common.mock.services.data.auth.auth-service-data-mock-impl");
 
 /**
  * Liste des utilisateurs en mode bouchon

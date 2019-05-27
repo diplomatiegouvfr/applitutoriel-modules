@@ -79,7 +79,7 @@
  */
 // L'import de hornet-js-utils doit être fait le plus tôt possible
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as fs from "fs";
 import { AppliI18nLoader } from "applitutoriel-js-common/src/i18n/app-i18n-loader";
 import { ServerConfiguration } from "hornet-js-core/src/server-conf";
@@ -87,8 +87,6 @@ import * as HornetServer from "hornet-js-core/src/server";
 import { HornetApp } from "applitutoriel-js-common/src/views/layouts/hornet-app";
 import { HornetLayout } from "applitutoriel-js-common/src/views/layouts/hornet-layout";
 import { ErrorPage } from "hornet-js-react-components/src/widget/component/error-page";
-
-
 
 // import { AuthenticationAPIMiddleware } from "src/middleware/authentication-api";
 
@@ -111,9 +109,9 @@ import { SamlStrategy } from "hornet-js-passport/src/strategy/saml/saml-strategy
 import { Database } from "hornet-js-database/src/sequelize/database";
 import { Injector } from "hornet-js-core/src/inject/injector";
 
-import * as Menu from "applitutoriel-js-common/src/resources/navigation.json";
+const Menu = require("applitutoriel-js-common/src/resources/navigation.json");
 // Mise en place des injections de service
-const logger: Logger = Utils.getLogger("applitutoriel.server");
+const logger: Logger = Logger.getLogger("applitutoriel.server");
 
 async function initContext() {
     await import("src/injector-context-services-data");

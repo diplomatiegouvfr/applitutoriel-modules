@@ -79,14 +79,15 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { ServiceRequest } from "hornet-js-core/src/services/service-request";
 import { Mailer, NodeMailerMessage } from "hornet-js-core/src/mail/mailer";
 import { ContactService } from "applitutoriel-js-common/src/services/page/cnt/contact-service-page";
 import { Template } from "hornet-js-utils/src/template";
 import { HornetComponent } from "hornet-js-react-components/src/widget/component/hornet-component";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel.services.gen.contact-service-data-impl");
+const logger: Logger = Logger.getLogger("applitutoriel.services.gen.contact-service-data-impl");
 
 /**
  * Implementation des services pour les contacts

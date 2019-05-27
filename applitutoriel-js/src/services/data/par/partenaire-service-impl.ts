@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { MediaType } from "hornet-js-core/src/protocol/media-type";
 import {
     URL_PAR_EXPORTER,
@@ -94,10 +94,9 @@ import { PartenaireResult } from "applitutoriel-js-common/src/services/type/par/
 import { HornetRequest } from "hornet-js-core/src/services/hornet-superagent-request";
 import { PartenaireService } from "applitutoriel-js-common/src/services/data/par/partenaire-service";
 import { ReferentielPaysServiceImpl } from "src/services/data/ref/ref-pays-service-impl";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-import * as _ from "lodash";
-
-const logger: Logger = Utils.getLogger("applitutoriel-js-hornet.services.data.par.partenaire-service-impl");
+const logger: Logger = Logger.getLogger("applitutoriel-js-hornet.services.data.par.partenaire-service-impl");
 
 /**
  * Implementation des services pour les partenaires
@@ -203,8 +202,8 @@ export class PartenaireServiceImpl extends PartenaireService {
      */
     protected convertToRemotePartenaire(webPartenaire: any): any {
 
-        let remotePartenaire: any = _.assign({}, webPartenaire);
-        remotePartenaire.satisfaction = (_.isArray(webPartenaire.satisfaction.ids)) ? webPartenaire.satisfaction.ids.join(",") : "";
+        let remotePartenaire: any = {...webPartenaire};
+        remotePartenaire.satisfaction = (Array.isArray(webPartenaire.satisfaction.ids)) ? webPartenaire.satisfaction.ids.join(",") : "";
 
         if (remotePartenaire.photo && remotePartenaire.photo.contenu) {
             let photo: any = remotePartenaire.photo;

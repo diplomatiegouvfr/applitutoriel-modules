@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as React from "react";
 import { HornetPage } from "hornet-js-react-components/src/widget/component/hornet-page";
 import { HornetComponentProps } from "hornet-js-components/src/component/ihornet-component";
@@ -92,7 +92,7 @@ import { AdministrationSecteurService } from "src/services/page/adm/adm-secteur-
 import { DataSource } from "hornet-js-core/src/component/datasource/datasource";
 import { DataSourceConfigPage } from "hornet-js-core/src/component/datasource/config/service/datasource-config-page";
 
-const logger: Logger = Utils.getLogger("applitutoriel.views.pro.pro-lst-page");
+const logger: Logger = Logger.getLogger("applitutoriel.views.pro.pro-lst-page");
 
 export class ListeProduitsPage extends HornetPage<AdministrationSecteurService, HornetComponentProps, any> {
 

@@ -85,11 +85,13 @@ Injector.register("databaseConfigName", "config");
 import { Utils } from "hornet-js-utils";
 import { SecteurServiceImpl } from "src/services/data/sec/secteur-service-impl";
 import { SecteurService } from "src/services/data/sec/secteur-service";
+import { ModelDAO } from "src/dao/model-dao";
 
 if (Utils.config.getOrDefault("mock.enabled", false)) {
     // Mock des serviceData
 
 } else {
+    Injector.register(ModelDAO, new ModelDAO() );
     Injector.register(SecteurService, SecteurServiceImpl);
 }
 

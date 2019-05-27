@@ -6,7 +6,9 @@ node_modules/
 hb_version
 !builder.js
 !trigger-rundeck.js
-!test.webpack.js
+!karma.addons.config.js
+!webpack.addons.config.js
+!tests.webpack.js
 npm-debug.log
 target/
 istanbul/
@@ -21,3 +23,4 @@ test_report/
 *.sqlite
 *.d.ts
 **/log/
+.history

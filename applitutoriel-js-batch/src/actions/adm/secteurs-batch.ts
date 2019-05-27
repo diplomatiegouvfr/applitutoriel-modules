@@ -78,16 +78,16 @@
  * @license CECILL-2.1
  */
 
-import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { SecteurService } from "src/services/data/sec/secteur-service";
 import { SecteurMetier } from "src/models/adm/sec-mod";
 import { ServiceReader } from "hornet-js-batch/src/core/reader/service-reader";
 import { ResultBatch } from "hornet-js-batch/src/result/result-batch";
 import { RouteActionBatch } from "hornet-js-batch/src/routes/abstract-batch-routes";
 import { DataReader } from "hornet-js-batch/src/core/reader/data-reader";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriellitebatch.actions.adm.secteurs-batch");
+const logger: Logger = Logger.getLogger("applitutoriellitebatch.actions.adm.secteurs-batch");
 
 export class CreerSecteurBatch extends RouteActionBatch<any, SecteurService> {
     execute(): Promise<ResultBatch> {

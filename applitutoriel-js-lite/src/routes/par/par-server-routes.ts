@@ -78,8 +78,7 @@
  * @license CECILL-2.1
  */
 
-import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as RecherchePartenairesAction from "applitutoriel-js-common/src/actions/par/par-rpa-actions";
 import * as FichePartenairesAction from "applitutoriel-js-common/src/actions/par/par-fpa-actions";
 import { DataRouteInfos } from "hornet-js-core/src/routes/abstract-routes";
@@ -96,7 +95,7 @@ import PartenairesRoutesClient from "src/routes/par/par-client-routes";
 
 import { Injector } from "hornet-js-core/src/inject/injector";
 
-const logger: Logger = Utils.getLogger("applitutoriel.routes.par.par-routes");
+const logger: Logger = Logger.getLogger("applitutoriel.routes.par.par-routes");
 
 export default class PartenaireRoutesServer extends PartenairesRoutesClient {
     constructor() {

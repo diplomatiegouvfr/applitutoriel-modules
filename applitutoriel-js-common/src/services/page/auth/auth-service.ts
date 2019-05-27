@@ -79,6 +79,7 @@
  */
 
 import { ServiceRequest } from "hornet-js-core/src/services/service-request";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
 /**
  * Interface des services pour l'authentification

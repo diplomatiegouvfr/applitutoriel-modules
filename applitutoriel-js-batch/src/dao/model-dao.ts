@@ -86,7 +86,6 @@ import { SecteurModel } from "src/models/adm/seq-sec-mod";
 import { Entity } from "hornet-js-database/src/decorators/dec-seq-entity";
 import { HornetSequelizeModel } from "hornet-js-database/src/sequelize/hornet-sequelize-model";
 
-@injectable(ModelDAO, Scope.SINGLETON, Side.SERVER)
 export class ModelDAO extends HornetSequelizeModel {
     @Entity("secteur", SecteurModel)
     public secteurEntity: Sequelize.Model<any, any>;

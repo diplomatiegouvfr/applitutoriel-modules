@@ -78,14 +78,14 @@
  * @license CECILL-2.1
  */
 
-import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { FicheProduitService } from "applitutoriel-js-common/src/services/page/adm/adm-fpo-service-page";
 import { ProduitDAO } from "src/dao/produit-dao";
 import { ProduitMetier } from "applitutoriel-js-common/src/models/pro/pro-mod";
 import { IService } from "hornet-js-core/src/services/service-api";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel.src.services.data.pro.fpo-service-data-impl");
+const logger: Logger = Logger.getLogger("applitutoriel.src.services.data.pro.fpo-service-data-impl");
 
 export class FicheProduitServiceImpl implements FicheProduitService, IService {
 

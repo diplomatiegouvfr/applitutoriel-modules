@@ -78,6 +78,7 @@
  * @license CECILL-2.1
  */
 
+import { Promise } from "hornet-js-utils/src/promise-api";
 import { ServiceRequest } from "hornet-js-core/src/services/service-request";
 
 /**

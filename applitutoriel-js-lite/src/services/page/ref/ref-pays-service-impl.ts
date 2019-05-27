@@ -78,19 +78,18 @@
  * @license CECILL-2.1
  */
 
-import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { ServicePage } from "hornet-js-core/src/services/service-page";
 import { HornetRequest, SpinnerType } from "hornet-js-core/src/services/hornet-superagent-request";
 import {
     URL_REF,
     URL_PAYS,
     URL_REF_VILLES,
-    URL_REF_NATIONALITE
-} from "applitutoriel-js-common/src/utils/urls";
+    URL_REF_NATIONALITE} from "applitutoriel-js-common/src/utils/urls";
 import { ReferentielPaysService } from "applitutoriel-js-common/src/services/page/ref/ref-pays-service";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel.services.par.ref-pays-service-page-impl");
+const logger: Logger = Logger.getLogger("applitutoriel.services.par.ref-pays-service-page-impl");
 
 /**
  * Implementation des services pour les referentiels

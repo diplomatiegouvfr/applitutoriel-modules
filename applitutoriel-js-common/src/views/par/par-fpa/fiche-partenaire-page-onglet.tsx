@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as React from "react";
 import { HornetPage, HornetPageProps } from "hornet-js-react-components/src/widget/component/hornet-page";
 import { HornetComponentProps } from "hornet-js-components/src/component/ihornet-component";
@@ -121,10 +121,11 @@ import { SortData } from "hornet-js-core/src/component/sort-data";
 import { PartenaireMetier } from "src/models/par/par-mod";
 import { FichePartenairePageService } from "src/services/page/par/par-fpa-service";
 import { DataSourceConfigPage } from "hornet-js-core/src/component/datasource/config/service/datasource-config-page";
+import {Promise} from "hornet-js-utils/src/promise-api";
 
 import * as schema from "src/views/par/par-fpa/validation.json";
 
-const logger: Logger = Utils.getLogger("applitutoriel.views.par.par-fpa.identite-tab");
+const logger: Logger = Logger.getLogger("applitutoriel.views.par.par-fpa.identite-tab");
 import { FichePartenaireResult } from "src/services/type/par/par-fpa-res";
 import { NotificationManager, Notifications } from "hornet-js-core/src/notification/notification-manager";
 import { URL_PARTENAIRES } from "src/utils/urls";

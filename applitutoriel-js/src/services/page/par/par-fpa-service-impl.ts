@@ -79,16 +79,15 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
-import * as _ from "lodash";
+import { Logger } from "hornet-js-logger/src/logger";
 import { URL_PAR_PHOTO, URL_PARTENAIRES, URL_SECTEURS } from "applitutoriel-js-common/src/utils/urls";
 import { HornetRequest, SpinnerType } from "hornet-js-core/src/services/hornet-superagent-request";
 import { FichePartenairePageService } from "applitutoriel-js-common/src/services/page/par/par-fpa-service";
 import { ReferentielPaysServiceImpl } from "src/services/page/ref/ref-pays-service-impl";
 import { Satisfaction } from "applitutoriel-js-common/src/models/par/par-mod";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-
-const logger: Logger = Utils.getLogger("applitutoriel.services.par.par-fpa-service-page-impl");
+const logger: Logger = Logger.getLogger("applitutoriel.services.par.par-fpa-service-page-impl");
 
 /**
  * Implementation des services pour les partenaires
@@ -147,7 +146,7 @@ export class FichePartenaireServiceImpl extends FichePartenairePageService {
      * @param {object} partenaire partenaire à modifier
      * @return Promise<object>
      */
-    modifier(id: number, partenaire: any, progress: Function): Promise<any> {
+    modifier(id: number, partenaire: any, progress: (event: any) => void): Promise<any> {
 
         let request: HornetRequest = { method: "put", url: this.buildUrl(URL_PARTENAIRES) + "/" + id }
 
@@ -209,8 +208,8 @@ export class FichePartenaireServiceImpl extends FichePartenairePageService {
      */
     protected convertToRemotePartenaire(webPartenaire: any): any {
 
-        let remotePartenaire: any = _.assign({}, webPartenaire);
-        remotePartenaire.satisfaction = (_.isArray(webPartenaire.satisfaction.ids)) ? webPartenaire.satisfaction.ids.join(",") : "";
+        let remotePartenaire: any = {...webPartenaire};
+        remotePartenaire.satisfaction = (Array.isArray(webPartenaire.satisfaction.ids)) ? webPartenaire.satisfaction.ids.join(",") : "";
 
         if (remotePartenaire.photo && remotePartenaire.photo.contenu) {
             let photo: any = remotePartenaire.photo;

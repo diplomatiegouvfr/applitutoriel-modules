@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { HornetRequest } from "hornet-js-core/src/services/hornet-superagent-request";
 import { MediaType } from "hornet-js-core/src/protocol/media-type";
 import {
@@ -96,8 +96,9 @@ import { SecteurServiceImpl } from "src/services/page/sec/secteur-service-page-i
 import { PartenaireRechercheParameter } from "applitutoriel-js-common/src/services/type/par/par-rpa-prm";
 import { FichePartenaire } from "applitutoriel-js-common/src/services/type/par/fpa-par-type";
 import { RecherchePartenaireService } from "applitutoriel-js-common/src/services/page/par/par-rpa-service";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel.services.par.par-rpa-service-page-impl");
+const logger: Logger = Logger.getLogger("applitutoriel.services.par.par-rpa-service-page-impl");
 
 /**
  * Implementation des services pour les partenaires

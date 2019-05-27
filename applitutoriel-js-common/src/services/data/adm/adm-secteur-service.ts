@@ -69,6 +69,8 @@
  *
  */
 
+import { Promise } from "hornet-js-utils/src/promise-api";
+
 /**
  * applitutoriel-js-common - Application tutoriel utilisant le Framework hornet
  *
@@ -78,7 +80,7 @@
  * @license CECILL-2.1
  */
 
-import { ApplitutorielSecteursServiceImpl } from "applitutoriel-js-common/src/services/applitutoriel-secteurs-service-impl";
+import { ApplitutorielSecteursServiceImpl } from "src/services/applitutoriel-secteurs-service-impl";
 
 /**
  * Interface des services pour les secteurs

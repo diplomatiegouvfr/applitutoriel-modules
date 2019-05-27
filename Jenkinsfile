@@ -100,6 +100,8 @@ pipeline {
 
 						if ( BRANCH_NAME.equals("develop") ) {
 							mapEnv["BUILD_VERSION"] = mapEnv["MODULE_VERSION"] + "-" + mapEnv["BUILD_TIMESTAMP"] + "-" + env.BUILD_NUMBER
+						} else if ( BRANCH_NAME.equals("release_candidate") ) {
+							mapEnv["BUILD_VERSION"] = "RC"
 						} else if ( BRANCH_NAME.equals("master") ){
 							mapEnv["BUILD_VERSION"] = mapEnv["MODULE_VERSION"]
 						}
@@ -107,7 +109,7 @@ pipeline {
 						// Publication
 						mapEnv["REPOSITORY_BASENAME"] = mapEnv["PROJECT_ID"]
 
-						if ( BRANCH_NAME.equals("develop") ) {
+						if ( BRANCH_NAME.equals("develop") || BRANCH_NAME.equals("release_candidate") ) {
 							mapEnv["PUBLISH_VERSION"] = mapEnv["MODULE_VERSION"] + "-SNAPSHOT"
                             mapEnv["PUBLISH_REPOSITORY"] = mapEnv["REPOSITORY_BASENAME"] + "-snapshot"
 							mapEnv["PUBLISH_REPOSITORY_NPM"] = mapEnv["REPOSITORY_BASENAME"] + "-npm-snapshot"

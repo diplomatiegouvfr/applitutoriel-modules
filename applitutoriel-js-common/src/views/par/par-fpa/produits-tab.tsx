@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { Table } from "hornet-js-react-components/src/widget/table/table";
 import { Column } from "hornet-js-react-components/src/widget/table/column";
 import { Columns } from "hornet-js-react-components/src/widget/table/columns";
@@ -93,7 +93,7 @@ import { Pager } from "hornet-js-react-components/src/widget/pager/pager";
 import * as React from "react";
 import { ProduitMetier } from "src/models/pro/pro-mod";
 
-const logger: Logger = Utils.getLogger("applitutoriel.views.par.par-fpa.produits-tab");
+const logger: Logger = Logger.getLogger("applitutoriel.views.par.par-fpa.produits-tab");
 
 export interface ProduitsTabProps extends HornetComponentProps {
     dataSource: PaginateDataSource<ProduitMetier>;

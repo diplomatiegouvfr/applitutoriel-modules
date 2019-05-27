@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { Client } from "hornet-js-core/src/client";
 import { Routes } from "src/routes/routes";
 import { HornetApp } from "applitutoriel-js-common/src/views/layouts/hornet-app";
@@ -88,7 +88,7 @@ import { ReactClientInitializer } from "hornet-js-react-components/src/react/rea
 import "src/injector-context-services-page";
 
 (function startClient() {
-    const logger: Logger = Utils.getLogger("applitutoriel.client");
+    const logger: Logger = Logger.getLogger("applitutoriel.client");
 
     function routeLoader(name: string, callback: any) {
         logger.trace("routeLoaderClient(" + name + ")");
@@ -116,7 +116,7 @@ import "src/injector-context-services-page";
             },
             onbeforeunload: function () {
                 logger.trace(Utils.getCls("hornet.navigateData"));
-                if (Utils.getCls("hornet.navigateData") && !_.isUndefined(Utils.getCls("hornet.navigateData"))) {
+                if (Utils.getCls("hornet.navigateData")) {
                     window.localStorage.setItem("hornet.navigateData", JSON.stringify(Utils.getCls("hornet.navigateData")));
                 }
             },

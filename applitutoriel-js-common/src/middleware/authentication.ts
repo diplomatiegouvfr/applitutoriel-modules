@@ -77,16 +77,15 @@
  * @link git+https://github.com/diplomatiegouvfr/applitutoriel-modules.git
  * @license CECILL-2.1
  */
-
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 
 const sha1 = require("sha1");
 const flash = require("connect-flash");
 
 import {Request, Application } from "express";
 import * as ReactDOMServer from "react-dom/server";
-import * as passport from "passport";
+import passport = require("passport");
 import { Strategy } from "passport-local";
 import * as _ from "lodash";
 import { ConnexionPage } from "src/views/gen/gen-cnx-page";
@@ -95,7 +94,7 @@ import { AuthService } from "src/services/data/auth/auth-service";
 
 export class AuthenticationMiddleware extends AbstractHornetMiddleware {
 
-    private static logger: Logger = Utils.getLogger("applitutoriel.middleware.authentication");
+    private static logger: Logger = Logger.getLogger("applitutoriel.middleware.authentication");
 
     protected api: AuthService;
 
@@ -163,7 +162,7 @@ export class AuthenticationMiddleware extends AbstractHornetMiddleware {
                 res.redirect(previousUrl);
             }
         );
-        app.all(loginUrl, function (req, res) {
+        app.all(loginUrl, function (req:Request, res) {
             let errors = req[ "flash" ]("error");
             if (errors.length > 0 && errors[ 0 ] === "Missing credentials") {
                 errors = [ "Votre identifiant ou votre mot de passe est incorrect" ];

@@ -77,7 +77,7 @@
  * @link git+https://github.com/diplomatiegouvfr/applitutoriel-modules.git
  * @license CECILL-2.1
  */
-
+import { Promise } from "hornet-js-utils/src/promise-api";
 /**
  * Interface des services pour les referentiels
  * @interface

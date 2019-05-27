@@ -80,10 +80,11 @@
 
 import { RouteActionService } from 'hornet-js-core/src/routes/abstract-routes';
 import { Utils } from 'hornet-js-utils';
-import { Logger } from 'hornet-js-utils/src/logger';
+import { Logger } from "hornet-js-logger/src/logger";
 import { CommonServiceData } from "src/services/data/common/common-service-data";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger('applitutoriel.actions.common.features.get');
+const logger: Logger = Logger.getLogger('applitutoriel.actions.common.features.get');
 
 export class FeaturesGetAction extends RouteActionService<any, CommonServiceData> {
 

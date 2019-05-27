@@ -79,13 +79,13 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as React from "react";
 import { HornetPage } from "hornet-js-react-components/src/widget/component/hornet-page";
 import { HornetComponentProps } from "hornet-js-components/src/component/ihornet-component";
 import { Notification } from "hornet-js-react-components/src/widget/notification/notification";
 
-const logger: Logger = Utils.getLogger("applitutoriel.views.gen.gen-aid-page");
+const logger: Logger = Logger.getLogger("applitutoriel.views.gen.gen-aid-page");
 
 export class AidePage extends HornetPage<any, HornetComponentProps, any> {
 

@@ -80,7 +80,7 @@
 
 import { FicheProduitService } from "src/services/page/adm/adm-fpo-service-page";
 import { RouteActionService } from "hornet-js-core/src/routes/abstract-routes";
-
+import { Promise } from "hornet-js-utils/src/promise-api";
 
 export const ACTION_LISTER_PRODUITS = "listerProduits";
 export const ACTION_REPARTITION_PRODUITS = "repartitionProduits";

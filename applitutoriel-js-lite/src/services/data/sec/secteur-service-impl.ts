@@ -78,15 +78,14 @@
  * @license CECILL-2.1
  */
 
-import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { BusinessError } from "hornet-js-utils/src/exception/business-error";
 import { SecteurMetier } from "applitutoriel-js-common/src/models/adm/sec-mod";
 import { Promise } from "hornet-js-utils/src/promise-api";
 import { AdministrationSecteurServiceData } from "applitutoriel-js-common/src/services/data/adm/adm-secteur-service-data";
 import { SecteursDAO } from "src/dao/secteurs-dao";
 
-const logger: Logger = Utils.getLogger("applitutoriel.src.services.data.sec.secteur-service-impl");
+const logger: Logger = Logger.getLogger("applitutoriel.src.services.data.sec.secteur-service-impl");
 
 export class SecteurServiceImpl extends AdministrationSecteurServiceData {
     private secteursDAO: SecteursDAO = new SecteursDAO();

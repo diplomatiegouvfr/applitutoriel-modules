@@ -82,6 +82,7 @@ import { PartenaireRechercheParameter } from "src/services/type/par/par-rpa-prm"
 import { MediaType } from "hornet-js-core/src/protocol/media-type";
 import { PartenaireResult } from "src/services/type/par/par-types";
 import { ServiceRequest } from "hornet-js-core/src/services/service-request";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
 /**
  * Interface des services pour les partenaires

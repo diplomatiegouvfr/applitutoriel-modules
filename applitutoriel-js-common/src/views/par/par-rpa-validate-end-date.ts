@@ -79,6 +79,7 @@
  */
 
 import { IValidationResult, ICustomValidation } from "hornet-js-core/src/validation/data-validator";
+import * as ajv from "ajv";
 import ErrorObject = ajv.ErrorObject;
 
 /**

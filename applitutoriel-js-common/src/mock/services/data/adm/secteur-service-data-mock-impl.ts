@@ -79,15 +79,14 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
-import { ApplitutorielSecteursServiceImpl } from "applitutoriel-js-common/src/services/applitutoriel-secteurs-service-impl";
-import { URL_SECTEURS } from "applitutoriel-js-common/src/utils/urls";
-import { AdministrationSecteurServiceData } from "applitutoriel-js-common/src/services/data/adm/adm-secteur-service-data";
+import { Logger } from "hornet-js-logger/src/logger";
+import { ApplitutorielSecteursServiceImpl } from "src/services/applitutoriel-secteurs-service-impl";
+import { URL_SECTEURS } from "src/utils/urls";
+import { AdministrationSecteurServiceData } from "src/services/data/adm/adm-secteur-service-data";
 import { Promise } from "hornet-js-utils/src/promise-api";
-import * as secteurs from "applitutoriel-js-common/src/resources/mock/adm/adm-lst-data.json";
-import { Response } from 'superagent';
+import * as secteurs from "src/resources/mock/adm/adm-lst-data.json";
 
-const logger: Logger = Utils.getLogger("applitutoriel-js-common.mock.services.data.adm.secteur-service-data-mock-impl");
+const logger: Logger = Logger.getLogger("applitutoriel-js-common.mock.services.data.adm.secteur-service-data-mock-impl");
 
 /**
  * Implementation des services pour les secteurs
@@ -115,7 +114,7 @@ export class SecteurServiceDataMockImpl extends AdministrationSecteurServiceData
      */
     supprimer(id: number): Promise<any> {
         logger.trace("SERVICES - supprimer : ", id);
-        return this.fetch({ method: "delete", url: this.buildUrl(URL_SECTEURS + "/" + id) });
+        return this.fetch({ method: "delete", url: this.buildUrl(URL_SECTEURS + "/" + id) }) as Promise<any>;
     }
 
     /**
@@ -130,7 +129,7 @@ export class SecteurServiceDataMockImpl extends AdministrationSecteurServiceData
             method: "post",
             url: this.buildUrl(URL_SECTEURS),
             data: secteur
-        });
+        }) as Promise<any>;
     }
 
     /**
@@ -147,6 +146,6 @@ export class SecteurServiceDataMockImpl extends AdministrationSecteurServiceData
             url: this.buildUrl(URL_SECTEURS + "/" + id),
             data: secteur,
             cacheLinkKey: [ this.buildUrl(URL_SECTEURS) ]
-        });
+        }) as Promise<any>;
     }
 }

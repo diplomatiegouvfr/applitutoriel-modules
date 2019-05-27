@@ -79,12 +79,12 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import { ServiceSecure } from "hornet-js-core/src/services/service-secure";
-import { PartenaireMetier } from "applitutoriel-js-common/src/models/par/par-mod";
-import { Response } from "superagent";
+import { PartenaireMetier } from "src/models/par/par-mod";
+import { Promise } from "hornet-js-utils/src/promise-api";
 
-const logger: Logger = Utils.getLogger("applitutoriel-js-common.services.data.par.par-fiche-partenaire-service");
+const logger: Logger = Logger.getLogger("applitutoriel-js-common.services.data.par.par-fiche-partenaire-service");
 
 /**
  * Implémentation des services pour les partenaires

@@ -79,7 +79,7 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as React from "react";
 import { Notification } from "hornet-js-react-components/src/widget/notification/notification";
 import { Table } from "hornet-js-react-components/src/widget/table/table";
@@ -96,7 +96,7 @@ import { HornetComponentProps } from "hornet-js-components/src/component/ihornet
 import { SecteurMetier } from "src/models/adm/sec-mod";
 import * as schemaEditionTable from "src/views/adm/adm-lst-table-validation.json";
 
-const logger: Logger = Utils.getLogger("applitutoriel.views.par.par-fpa.secteurs-tab");
+const logger: Logger = Logger.getLogger("applitutoriel.views.par.par-fpa.secteurs-tab");
 
 export interface SecteursTabProps extends HornetComponentProps {
     dataSource: PaginateDataSource<SecteurMetier>;

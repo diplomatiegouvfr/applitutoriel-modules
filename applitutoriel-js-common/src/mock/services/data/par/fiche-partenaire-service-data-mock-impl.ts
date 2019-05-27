@@ -79,20 +79,20 @@
  */
 
 import { Utils } from "hornet-js-utils";
-import { Logger } from "hornet-js-utils/src/logger";
+import { Logger } from "hornet-js-logger/src/logger";
 import * as _ from "lodash";
-import { URL_PAR_PHOTO, URL_PARTENAIRES } from "applitutoriel-js-common/src/utils/urls";
+import { URL_PAR_PHOTO, URL_PARTENAIRES } from "src/utils/urls";
 import { HornetRequest, SpinnerType } from "hornet-js-core/src/services/hornet-superagent-request";
-import { FichePartenairePageService } from "applitutoriel-js-common/src/services/page/par/par-fpa-service";
-import { ReferentielPaysServiceDataMockImpl } from "applitutoriel-js-common/src/mock/services/data/ref/ref-pays-service-data-mock-impl";
-import { PartenaireResult } from "applitutoriel-js-common/src/services/type/par/par-types";
+import { FichePartenairePageService } from "src/services/page/par/par-fpa-service";
+import { ReferentielPaysServiceDataMockImpl } from "src/mock/services/data/ref/ref-pays-service-data-mock-impl";
+import { PartenaireResult } from "src/services/type/par/par-types";
 
-import * as tableauDePartenaires from "applitutoriel-js-common/src/resources/mock/par/par-rpa-data.json";
-import * as villes from "applitutoriel-js-common/src/resources/mock/par/par-rpa-villes.json";
-import * as pays from "applitutoriel-js-common/src/resources/mock/par/par-pays-data.json";
+import * as tableauDePartenaires from "src/resources/mock/par/par-rpa-data.json";
+import * as villes from "src/resources/mock/par/par-rpa-villes.json";
+import * as pays from "src/resources/mock/par/par-pays-data.json";
 import { ReferentielPaysService } from "src/services/data/ref/ref-pays-service";
 import { Promise } from "hornet-js-utils/src/promise-api";
-const logger: Logger = Utils.getLogger("applitutoriel-js-common.mock.services.data.par.fiche-partenaire-service-data-mock-impl");
+const logger: Logger = Logger.getLogger("applitutoriel-js-common.mock.services.data.par.fiche-partenaire-service-data-mock-impl");
 
 /**
  * Implementation des services pour les partenaires
@@ -191,7 +191,7 @@ export class FichePartenaireServiceDataMockImpl extends FichePartenairePageServi
                 request.attach.push({ field: "photo", file: partenaire.photo, fileName: partenaire.photo.name });
             }
         }
-        return this.fetch(request);
+        return this.fetch(request) as Promise<any>;
     }
 
     /**
@@ -202,7 +202,7 @@ export class FichePartenaireServiceDataMockImpl extends FichePartenairePageServi
     lirePhoto(id: number, res?: NodeJS.WritableStream): Promise<any> {
         logger.trace("SERVICES - lirePhoto : ", id);
         let request: HornetRequest = { method: "get", url: this.buildUrl(URL_PARTENAIRES + "/" + id + URL_PAR_PHOTO) };
-        return (res) ? this.fetchOnStream(request, res) : this.fetch(request);
+        return (res) ? this.fetchOnStream(request, res) as Promise<any> : this.fetch(request) as Promise<any>;
     }
 
     /**
