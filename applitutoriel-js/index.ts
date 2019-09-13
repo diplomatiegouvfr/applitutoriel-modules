@@ -103,14 +103,6 @@ Module._newNodeModulePaths = function (from) {
     var paths = Module._oldNodeModulePaths.call(this, from);
     paths.push(path.join(appDirectory));
     paths.push(path.join(appDirectory, NODE_MODULES));
-
-    let modulePath = from
-    do {
-        if(fs.existsSync(path.join(modulePath, NODE_MODULES))) {
-            paths.push(path.join(modulePath, NODE_MODULES));
-        }
-        modulePath = path.dirname(modulePath)
-    } while(modulePath.length > 1)
     return paths;
 };
 Module._nodeModulePaths = Module._newNodeModulePaths;
